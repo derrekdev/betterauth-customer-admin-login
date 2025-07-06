@@ -9,15 +9,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { customerAuthClient } from "@/lib/customer-authClient";
+import { adminAuthClient } from "@/lib/admin-authClient";
 import { useRouter } from "next/navigation";
 
-export default function CustomerDashboard() {
+export default function AdminDashboard() {
   const router = useRouter();
-  const { data: session, isPending } = customerAuthClient.useSession();
+  const { data: session, isPending } = adminAuthClient.useSession();
 
   async function sigOutUser() {
-    await customerAuthClient.signOut({
+    await adminAuthClient.signOut({
       fetchOptions: {
         onSuccess: () => {
           router.push("/");
@@ -26,11 +26,11 @@ export default function CustomerDashboard() {
     });
   }
   return (
-    <Card className="max-w-[350px] w-full">
+    <Card className="max-w-[350px] w-full dark">
       <CardHeader>
-        <CardTitle>Customer Dashboard</CardTitle>
+        <CardTitle>Admin Dashboard</CardTitle>
         <CardDescription>
-          This dashboard serves as the homepage for the customer account.
+          This dashboard serves as the homepage for the admin account.
         </CardDescription>
       </CardHeader>
       <CardContent>

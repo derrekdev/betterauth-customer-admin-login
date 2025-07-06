@@ -44,7 +44,7 @@ export default function AdminrLogin() {
     });
   }
   return (
-    <Card className="max-w-[350px] w-full">
+    <Card className="max-w-[350px] w-full dark">
       <CardHeader>
         <CardTitle>Admin Login</CardTitle>
         <CardDescription>
@@ -85,7 +85,7 @@ export default function AdminrLogin() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="bg-neutral-600 w-full">
+            <Button type="submit" className=" w-full">
               Admin Login
             </Button>
           </form>

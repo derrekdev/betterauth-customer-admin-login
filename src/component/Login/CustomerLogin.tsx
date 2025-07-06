@@ -45,7 +45,7 @@ export default function CustomerLogin() {
 
   return (
     <Card className="max-w-[350px] w-full">
-      <CardHeader>
+      <CardHeader className="">
         <CardTitle>Customer Login</CardTitle>
         <CardDescription>
           Login form for sign in your customer account
@@ -85,7 +85,7 @@ export default function CustomerLogin() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="bg-neutral-600 w-full">
+            <Button type="submit" className=" w-full">
               Customer Login
             </Button>
           </form>
