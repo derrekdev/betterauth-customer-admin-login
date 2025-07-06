@@ -1,27 +1,24 @@
-import AdminLogin from "@/component/Login/AdminLogin";
-import CustomerLogin from "@/component/Login/CustomerLogin";
+import Register from "@/component/Register/Register";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-
-export default function Home() {
+export default function page() {
   return (
     <main className="flex flex-col justify-center items-center w-full h-dvh">
-      <section className="max-w-[700px] w-full flex flex-row max-md:flex-col gap-4 items-center">
-        <CustomerLogin />
-        <AdminLogin />
+      <section className="max-w-[400px] w-full flex flex-row max-md:flex-col gap-4 items-center">
+        <Register />
       </section>
-      <div className="max-w-[700px] mt-10 w-full">
+      <section className="max-w-[400px] mt-10 w-full">
         <Card>
           <CardContent className="text-center">
-            <Link href={"/register"}>
+            <Link href={"/"}>
               <Button variant="default" className="cursor-pointer">
-                Register here
+                Back to login
               </Button>
             </Link>
           </CardContent>
         </Card>
-      </div>
+      </section>
     </main>
   );
 }
