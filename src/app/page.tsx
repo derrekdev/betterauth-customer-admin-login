@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center w-full h-dvh">
-      <section className="max-w-[700px] w-full flex flex-row max-md:flex-col gap-4 items-center">
+    <>
+      <div className="max-w-[700px] w-full flex flex-row max-md:flex-col gap-4 items-center">
         <CustomerLogin />
         <AdminLogin />
-      </section>
+      </div>
       <div className="max-w-[700px] mt-10 w-full">
         <Card>
           <CardContent className="text-center">
@@ -22,6 +22,6 @@ export default function Home() {
           </CardContent>
         </Card>
       </div>
-    </main>
+    </>
   );
 }

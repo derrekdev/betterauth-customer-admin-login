@@ -22,6 +22,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { adminAuthClient } from "@/lib/admin-authClient";
 import { loginSchema } from "@/zodValidation/userValidation";
 import z from "zod";
 
@@ -35,10 +36,12 @@ export default function AdminrLogin() {
   });
 
   // 2. Define a submit handler.
-  function onAdminSubmit(values: z.infer<typeof loginSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onAdminSubmit(values: z.infer<typeof loginSchema>) {
+    const { data, error } = await adminAuthClient.signIn.email({
+      email: values.email,
+      password: values.password,
+      callbackURL: "/admin",
+    });
   }
   return (
     <Card className="max-w-[350px] w-full">

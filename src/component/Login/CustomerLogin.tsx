@@ -22,6 +22,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { customerAuthClient } from "@/lib/customer-authClient";
 import { loginSchema } from "@/zodValidation/userValidation";
 import z from "zod";
 
@@ -34,12 +35,14 @@ export default function CustomerLogin() {
     },
   });
 
-  // 2. Define a submit handler.
-  function onCustomerSubmit(values: z.infer<typeof loginSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onCustomerSubmit(values: z.infer<typeof loginSchema>) {
+    const { data, error } = await customerAuthClient.signIn.email({
+      email: values.email,
+      password: values.password,
+      callbackURL: "/customer",
+    });
   }
+
   return (
     <Card className="max-w-[350px] w-full">
       <CardHeader>
