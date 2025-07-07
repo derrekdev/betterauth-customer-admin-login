@@ -1,5 +1,5 @@
-import AdminLogin from "@/component/Login/AdminLogin";
-import CustomerLogin from "@/component/Login/CustomerLogin";
+import AdminLogin from "@/components/features/Login/AdminLogin";
+import CustomerLogin from "@/components/features/Login/CustomerLogin";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
